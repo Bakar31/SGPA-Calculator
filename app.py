@@ -1,5 +1,4 @@
 from flask import Flask, request, jsonify, render_template
-import numpy as np
 
 def calculate(values):
     credits = values[0]+values[2]+values[4]+values[6]+values[8]+values[10]+values[12]+values[14]+values[16]
