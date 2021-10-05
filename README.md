@@ -2,3 +2,5 @@
 
 ## Web app:
 https://calculate-cgpa-easily.herokuapp.com/
+
+![alt text](http://url/to/img.png)
