@@ -3,4 +3,4 @@
 ## Web app:
 https://calculate-cgpa-easily.herokuapp.com/
 
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/Bakar31/CGPA-Calculator/blob/master/web%20app.png)
