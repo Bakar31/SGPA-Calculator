@@ -2,41 +2,233 @@
 <html >
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculate CGPA</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&display=swap');
+    *{
+        padding: 0;
+        margin:0;
+        box-sizing: border-box;
+        
+    }
+    body{
+        position: relative;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background:url("div_back2.jpeg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        
+    }
+    .login{
+        position: relative;
+        height: 610px;
+        width: 650px;
+        display: flex;
+        align-items: center;
+        
+        flex-direction: column;
+        backdrop-filter: blur(10px);
+        border-radius: 10px;
+        overflow: hidden;
+        background: linear-gradient(to right bottom,rgba(5, 5, 5, 0.562),transparent);
+    }
+    .name{
+        position:relative;
+        width: 100%;
+        height: 100px;
+        background-color: rgb(11, 74, 133);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 5px;
+        border-radius: 10px 10px 0px 0px;
+    }
+    .name p{
+        position: relative;
+        color: rgb(252, 252, 252);
+        font-size: 30px;
+        font-family: 'Baloo 2', cursive;
+        font-weight: 800;
+    }
+    form{
+        position: relative;
+        height: fit-content;
+        width: 600px;
+        padding: 0;
+        margin:0;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(9,40px)
+        
+    }
+    input{
+        position: relative;
+        width: 99%;
+        padding-left: 10px;
+        margin-bottom: 5px;
+        padding-right: 10px;
+        border: 2px solid rgb(39, 74, 148);
+        border-radius: 10px;
+        font-size: 16px;
+        background-color: rgba(255, 255, 255, 0.39);
+        outline: none;
+    }
+    button{
+        position: relative;
+        width: 200%;
+        height: 40px;
+        border-radius: 0px 0px 10px 10px;
+        border: none;
+        background-color: rgb(129, 5, 63);
+        color: white;
+        
+        font-size: 18px;
+    }
+    input:focus{
+        background-color: rgb(11, 104, 180);
+        color: aliceblue;
+    }
+    input::placeholder{
+        font-size: 16px;
+        color: rgb(36, 35, 35);
+    }
+    input:nth-child(1){
+        border-radius: 0px 0px 10px 10px;
+    }
+    input:nth-child(2){
+        border-radius: 0px 0px 10px 10px;
+    }
+    input:nth-child(17){
+        border-radius: 10px 10px 0px 0px;
+        
+        
+    }
+    input:nth-child(18){
+        border-radius: 10px 10px 0px 0px;
+        
+    }
+    input:nth-child(even){
+        width: 100%;
+    }
+    .result{
+        position: relative;
+        bottom:0;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        height: 100px;
+        margin-top:15px;
+        background-color: rgb(11, 74, 133);
+        width: 100%;
+    }
+    button:hover{
+        background-color: rgb(163, 39, 97);
+    }
+    .result h1{
+        font-size: 25px;
+        color: aliceblue;
+        font-family: 'Baloo 2', cursive;
+        font-weight: 700;
+    }
+    .result p{
+        position: absolute;
+        bottom: 3px;
+        right: 10px;
+        color: aliceblue;
+        font-size: 13px;
+        
+    }
+    @media only screen and (max-width:420px)
+    {
+        .login{
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+        form{
+            display: grid;
+            position: relative;
+            width: 100%;
+            margin-top: 20px;
+            overflow-y: scroll;
+            padding-left: 10px;
+            padding-right: 10px;
+            grid-gap: 5px;
+        }
+        input{
+            height: 40px;
+            width: 100%;
+            border-radius: 10px;
+            
+        }
+        .result{
+            position: absolute;
+            bottom:0;
+        }
+        button{
+            width: 200%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        input:nth-child(1){
+            border-radius: 10px 10px 10px 10px;
+        }
+        input:nth-child(2){
+            border-radius: 10px 10px 10px 10px;
+        }
+        input:nth-child(17){
+            border-radius: 10px 10px 10px 10px;
+            
+            
+        }
+        input:nth-child(18){
+            border-radius: 10px 10px 10px 10px;
+            
+        }
+    }
+    
+  </style>
 </head>
 
 <body>
  <div class="login">
-	<h1>GPA Calculator</h1>
-    <h4>Made By Abu Bakar Siddik (1808031)</h4>
-
+     <div class="name">
+         <p>CGPA Claculator</p>
+     </div>
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
     	<input type="text" name="Course-1 Credit" placeholder="Course-1 Credit" required="required" />
-        <input type="text" name="Course-1 GPA" placeholder="Course-1 GPA" required="required" /><br>
+        <input type="text" name="Course-1 GPA" placeholder="Course-1 GPA" required="required" />
 		<input type="text" name="Course-2 Credit" placeholder="Course-2 Credit" required="required" />
-        <input type="text" name="Course-2 GPA" placeholder="Course-2 GPA" required="required" /><br>
+        <input type="text" name="Course-2 GPA" placeholder="Course-2 GPA" required="required" />
         <input type="text" name="Course-3 Credit" placeholder="Course-3 Credit" required="required" />
-		<input type="text" name="Course-3 GPA" placeholder="Course-3 GPA" required="required" /><br>
+		<input type="text" name="Course-3 GPA" placeholder="Course-3 GPA" required="required" />
         <input type="text" name="Course-4 Credit" placeholder="Course-4 Credit" required="required" />
-        <input type="text" name="Course-4 GPA" placeholder="Course-4 GPA" required="required" /><br>
+        <input type="text" name="Course-4 GPA" placeholder="Course-4 GPA" required="required" />
 		<input type="text" name="Course-5 Credit" placeholder="Course-5 Credit" required="required" />
-        <input type="text" name="Course-5 GPA" placeholder="Course-5 GPA" required="required" /><br>
+        <input type="text" name="Course-5 GPA" placeholder="Course-5 GPA" required="required" />
         <input type="text" name="Course-6 Credit" placeholder="Course-6 Credit" required="required" />
-		<input type="text" name="Course-6 GPA" placeholder="Course-6 GPA" required="required" /><br>
+		<input type="text" name="Course-6 GPA" placeholder="Course-6 GPA" required="required" />
         <input type="text" name="Course-7 Credit" placeholder="Course-7 Credit" required="required" />
-        <input type="text" name="Course-7 GPA" placeholder="Course-7 GPA" required="required" /><br>
+        <input type="text" name="Course-7 GPA" placeholder="Course-7 GPA" required="required" />
 		<input type="text" name="Course-8 Credit" placeholder="Course-8 Credit" required="required" />
-        <input type="text" name="Course-8 GPA" placeholder="Course-8 GPA" required="required" /><br>
+        <input type="text" name="Course-8 GPA" placeholder="Course-8 GPA" required="required" />
         <input type="text" name="Course-9 Credit" placeholder="Course-9 Credit" required="required" />
-		<input type="text" name="Course-9 GPA" placeholder="Course-9 GPA" required="required" /><br>
+		<input type="text" name="Course-9 GPA" placeholder="Course-9 GPA" required="required" />
 
         <button type="submit" class="btn btn-primary btn-block btn-large">calculate</button>
     </form>
 
-   <br>
-   <br>
-   <h1>{{ prediction_text }}</h1>
+   
+   <div class="result">
+    <h1>{{ prediction_text }}</h1>
+    <p>Created by Abu Bakar Siddik</p>
+   </div>
 
  </div>
 
