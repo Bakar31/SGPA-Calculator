@@ -145,10 +145,17 @@
     }
     @media only screen and (max-width:420px)
     {
+        .name{
+            border-radius: 0px 0px 40px 40px;
+        }
         .login{
             position: relative;
             height: 100%;
             width: 100%;
+            display:grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 80px auto 110px;
+            border-radius: 0px;
         }
         form{
             display: grid;
@@ -159,6 +166,8 @@
             padding-left: 10px;
             padding-right: 10px;
             grid-gap: 5px;
+            height:100%;
+            
         }
         input{
             height: 40px;
@@ -167,8 +176,10 @@
             
         }
         .result{
-            position: absolute;
+            position: relative;
             bottom:0;
+            height: 90%;
+            border-radius: 40px 40px 0px 0px;
         }
         button{
             width: 200%;
