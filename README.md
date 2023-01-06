@@ -3,6 +3,6 @@
 # To remove the difficulty of calculating CGPA
 
 ## Web app:
-https://web-production-4016.up.railway.app/calculate
+https://web-production-4016.up.railway.app/
 
 ![alt text](https://github.com/Bakar31/CGPA-Calculator/blob/master/ss.png)
