@@ -4,8 +4,8 @@
 
 <p>
 After the examination, the majority of students can anticipate the outcome. Likewise for me. 
-After completing the semester's final exams, I attempt to calculate my possible CGPA. 
-Calculating the CGPA is a tedious undertaking. Therefore, I developed this basic web calculator. 
+After completing the semester's final exams, I attempt to calculate my possible SGPA. 
+Calculating the SGPA is a tedious undertaking. Therefore, I developed this basic web calculator. 
 This project's primary objective is to simplify the calculation of CGPA.
 Calculation method is based on the system of <strong>Rajshahi University of Engineering & Technology</strong> <a href="https://www.ruet.ac.bd/" target="_blank">RUET</a>
 </p>
